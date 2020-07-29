@@ -1,0 +1,2 @@
+# LatihanGit
+IniCumaLatihan
