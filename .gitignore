@@ -1,0 +1,8 @@
+laravel/vendor
+laravel/.idea
+laravel/Homestead.json
+laravel/Homestead.yaml
+laravel/.env
+laravel/.htaccess
+laravel/public/.htaccess
+.env.prod
