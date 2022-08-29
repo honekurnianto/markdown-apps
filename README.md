@@ -11,7 +11,9 @@
    ![image](image/Screenshot_3.jpg)
 
 6. Konfigure nginx sebagai proxy.
+
    ![image](image/Screenshot_4.jpg)
    
 7. Aplikasi berhasil di akses.
+
    ![image](image/Screenshot_2.jpg)
