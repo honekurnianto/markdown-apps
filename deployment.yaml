@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-web
+  labels:
+    name: laravel-web
+spec:
+  selector:
+    matchLabels:
+      name: laravel-web 
+  template:
+    metadata:
+      name: laravel-web
+      labels:
+        name: laravel-web
+    spec:
+      containers:
+      - name: markdown-app
+        image: docker.io/hkdock01/laravel-markdown-app
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-web-service
+spec:
+  type: NodePort
+  selector:
+    name: laravel-web
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-name
+spec:
+  minReplicas: 3
+  maxReplicas: 5
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: laravel-web
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 70
