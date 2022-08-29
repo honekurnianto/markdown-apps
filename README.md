@@ -1,19 +1,19 @@
 
-1. Membuat aplikasi sederhana yaitu konversi Markdown ke HTML yang dibangun dengan Laravel framework.
-2. Membuat Dockerfile untuk aplikasi laravel. Dockerfile menggunakan image php8.1-apache yang berjalan di port 80.
-3. Membuat yaml file untuk deployment kubernetes yang berisi kind Deployment, Service, HorizontalPodAutoscaler(HPA).
-4. Mendeploy aplikasi ke kuberneter.
+1. Creating a simple application that is converting Markdown to HTML built with the Laravel framework.
+2. Create Dockerfile for laravel application. Dockerfile using php8.1-apache image and running on port 80.
+3. Created a yaml file for a kubernetes deployment containing the kind of Deployment, Service, HorizontalPodAutoscaler(HPA).
+4. Deploy apps to kubernetes.
 
    ![image](image/Screenshot_1.jpg)
    
-5. Setelah itu cek pod, service dan hpa dengan perintah kubectl get all. pod berjalan 3 pod sesuai dengan replica HPA. Autoscaler akan berjalan jika resource cpu / memory mencapai 70%.
+5. When finished check pods, services and hpa with the kubectl get all command. The pods run with 3 replica compatible pods in HPA. Autoscaler will run if cpu/memory resource reaches 70%.
 
    ![image](image/Screenshot_3.jpg)
 
-6. Konfigure nginx sebagai proxy.
+6. Configure nginx as proxy.
 
    ![image](image/Screenshot_4.jpg)
    
-7. Aplikasi berhasil di akses.
+7. Application successfully accessed.
 
    ![image](image/Screenshot_2.jpg)
