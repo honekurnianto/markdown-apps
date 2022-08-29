@@ -1,3 +1,3 @@
 
 
-![alt text](Screenshot_1.jpg)
+![alt text](image/Screenshot_1.jpg)
